@@ -10,6 +10,6 @@ COPY package.json package.json
 
 RUN npm install && npm cache clean --force
 
-EXPOSE 80
+EXPOSE 3000
 
-CMD ["/sbin/tini", "node ./bin/www"]
+CMD ["/sbin/tini", "--", "node", "./bin/www"]
