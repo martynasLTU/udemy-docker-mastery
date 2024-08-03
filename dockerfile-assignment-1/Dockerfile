@@ -2,8 +2,7 @@
 FROM node:6-alpine
 # NOTE: The instructions are now in the README.md file in this directory.
 
-RUN apk add --no-cache tini \
-        mkdir -p /usr/src/app
+RUN apk add --no-cache tini
 
 WORKDIR /user/src/app
 
