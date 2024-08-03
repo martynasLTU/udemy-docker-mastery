@@ -12,4 +12,4 @@ RUN npm install && npm cache clean --force
 
 EXPOSE 80
 
-CMD ["/sbin/tini -- node ./bin/www"]
+CMD ["/sbin/tini", "node ./bin/www"]
