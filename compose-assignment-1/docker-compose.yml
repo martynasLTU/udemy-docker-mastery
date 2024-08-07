@@ -14,7 +14,7 @@ services:
       # existing content of the image at the same location
       - /var/www/html/sites
   database:
-    image: httpd:2  # this will use the latest apache v2
+    image: postgres:14  # this will use the latest apache v2
     environment:
       POSTGRES_DB: drupal
       POSTGRES_USER: user
