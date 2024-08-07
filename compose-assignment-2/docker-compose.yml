@@ -1,1 +1,31 @@
 # create your drupal and postgres config here, based off the last assignment
+# two images drupal and posgress
+
+services:
+  custom-drupal:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: custom-drupal
+    ports:
+      - '8080:80'
+    volumes:
+      - drupal-modules:/var/www/html/modules
+      - drupal-profiles:/var/www/html/profiles       
+      - drupal-sites:/var/www/html/sites      
+      - drupal-themes:/var/www/html/themes
+  database:
+    image: mariadb:10.3  # this will use the latest apache v2
+    environment:
+      MARIADB_ROOT_PASSWORD: s3cret
+      MARIADB_DATABASE: drupal
+      MARIADB_USER: user
+      MARIADB_PASSWORD: pass
+    volumes:
+      - drupal-data:/var/lib/postgresql/data
+volumes:
+  drupal-modules:
+  drupal-profiles:
+  drupal-sites:
+  drupal-themes:
+  drupal-data:
