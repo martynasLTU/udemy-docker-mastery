@@ -22,7 +22,7 @@ services:
       MARIADB_USER: user
       MARIADB_PASSWORD: pass
     volumes:
-      - drupal-data:/var/lib/postgresql/data
+      - drupal-data:/var/lib/mysql
 volumes:
   drupal-modules:
   drupal-profiles:
